@@ -1,0 +1,58 @@
+:plugin: example
+:type: filter
+
+///////////////////////////////////////////
+START - GENERATED VARIABLES, DO NOT EDIT!
+///////////////////////////////////////////
+:version: %VERSION%
+:release_date: %RELEASE_DATE%
+:changelog_url: %CHANGELOG_URL%
+:include_path: ../../../../logstash/docs/include
+///////////////////////////////////////////
+END - GENERATED VARIABLES, DO NOT EDIT!
+///////////////////////////////////////////
+
+[id="plugins-{type}s-{plugin}"]
+
+=== Example filter plugin
+
+include::{include_path}/plugin_header.asciidoc[]
+
+==== Description
+
+This filter transforms json in a specified field to a set of jsonpaths and places each one in its own field.
+
+[id="plugins-{type}s-{plugin}-options"]
+==== Example Filter Configuration Options
+
+This plugin supports the following configuration options plus the <<plugins-{type}s-{plugin}-common-options>> described later.
+
+[cols="<,<,<",options="header",]
+|=======================================================================
+|Setting |Input type|Required
+| <<plugins-{type}s-{plugin}-field>> |{logstash-ref}/configuration-file-structure.html#string[string]|Yes
+| <<plugins-{type}s-{plugin}-prefix>> |{logstash-ref}/configuration-file-structure.html#string[string]|No
+|=======================================================================
+
+Also see <<plugins-{type}s-{plugin}-common-options>> for a list of options supported by all
+filter plugins.
+
+[id="plugins-{type}s-{plugin}-field"]
+===== `field`
+
+  * Value type is {logstash-ref}/configuration-file-structure.html#string[string]
+  * No default value
+
+This filed will be a source for the algorithm. If the value is not a valid json, no
+
+[id="plugins-{type}s-{plugin}-prefix"]
+===== `prefix`
+
+  * Value type is {logstash-ref}/configuration-file-structure.html#string[string]
+  * No default value
+
+The specified value will act as a prefix for jsonpath fields.
+
+
+[id="plugins-{type}s-{plugin}-common-options"]
+include::{include_path}/{type}.asciidoc[]
